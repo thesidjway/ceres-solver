@@ -39,15 +39,9 @@
   <url type="website">http://ceres-solver.org/</url>
 
   <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>eigen</build_depend>
+  <run_depend>eigen</run_depend>
 
-  <depend>atlas</depend>
-  <depend>eigen</depend>
-  <depend>gfortran</depend>
-  <depend>libgflags-dev</depend>
-  <depend>libgoogle-glog-dev</depend>
-  <depend>suitesparse</depend>
 
-  <export>
-    <build_type>cmake</build_type>
-  </export>
+
 </package>
