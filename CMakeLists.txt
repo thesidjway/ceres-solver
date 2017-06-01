@@ -202,8 +202,15 @@ endif (IOS)
 
 unset(CERES_COMPILE_OPTIONS)
 
+find_package(catkin REQUIRED COMPONENTS   
+roscpp       
+) 
+
+catkin_package(   INCLUDE_DIRS include   
+CATKIN_DEPENDS roscpp DEPENDS eigen3)
+
 # Eigen.
-find_package(Eigen REQUIRED)
+find_package(Eigen3 REQUIRED)
 if (EIGEN_FOUND)
   if (EIGEN_VERSION VERSION_LESS 3.1.0)
     message(FATAL_ERROR "-- Ceres requires Eigen version >= 3.1.0 in order "
@@ -532,7 +539,7 @@ include_directories(
 # Note that this is *not* propagated to clients, ie CERES_INCLUDE_DIRS
 # used by clients after find_package(Ceres) does not identify Eigen as
 # as system headers.
-include_directories(SYSTEM ${EIGEN_INCLUDE_DIRS})
+include_directories(SYSTEM ${EIGEN3_INCLUDE_DIR})
 
 if (SUITESPARSE)
   include_directories(${SUITESPARSE_INCLUDE_DIRS})
