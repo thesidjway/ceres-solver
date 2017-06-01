@@ -202,9 +202,7 @@ endif (IOS)
 
 unset(CERES_COMPILE_OPTIONS)
 
-find_package(catkin REQUIRED COMPONENTS   
-roscpp       
-) 
+find_package(catkin) 
 
 catkin_package(   INCLUDE_DIRS include   
 CATKIN_DEPENDS roscpp DEPENDS eigen3)
